@@ -8,6 +8,7 @@ const App = () => {
   const height = width;
   const [result, setResult] = useState(0);
   const [formula, setFormula] = useState([]);
+
   const Operators = {
     DIVIDE: '÷',
     MULTIPLY: 'x',
@@ -98,9 +99,13 @@ const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
+
       <View style={styles.resultContainer}>
-        <Text style={styles.text}>{result}</Text>
+        <Text style={styles.text}>
+          {result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        </Text>
       </View>
+
       <View style={styles.buttonContainer}>
         <View style={styles.leftPad}>
           <View style={styles.number}>

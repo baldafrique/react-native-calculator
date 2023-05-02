@@ -99,7 +99,9 @@ const App = () => {
     <View style={styles.container}>
       <StatusBar style="light" />
       <View style={styles.resultContainer}>
-        <Text style={styles.text}>{result}</Text>
+        <Text style={styles.text}>
+          {result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        </Text>
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.leftPad}>
